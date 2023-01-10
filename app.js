@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 3000
-const mensaje = "bienvenido al servidor"
+const mensaje = "Bienvenido al Servidor de Prueba"
 
 
 app.get('/', (req, res) => {
@@ -16,7 +16,13 @@ app.get('/:apellido/:nombre', (req, res) => {
 
 /*punto 2*/
 
-
+app.get('/dividir/:dividendo/:divisor', (req, res) => {
+    if (req.params.divisor == 0) {
+        res.json({error: "No se puede dividir por cero"})
+    } else {
+        res.json({resultado:"resultado"})
+    }
+})
 
 /*punto 3*/
 
@@ -43,6 +49,8 @@ app.get('/listadodecompras', (req, res) => {
     console.log(req.query)
     res.json(req.query)
 })
+
+/* fin de trabajo practico*/
 
 app.listen(port, () => {
     console.log(`Ejemplo ejecutandose http://localhost:${port}/`)
