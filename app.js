@@ -34,17 +34,17 @@ app.get('/suma/:x/:y', (req, res) => {
 } else {
     res.json({error:"el numero es menor que cero"})
 }
-})
+});
 
 /*punto 4*/
 
 app.get('/numero', (req, res) => {
-    if(req.query.num === "par") {
+    if(req.query.num % 2 ===  0) {
         res.send("Autorizado")
     } else {
         res.send("No Autorizado")
     }
-    })
+    });
 
 /*punto 5*/
 
