@@ -14,7 +14,7 @@ app.get('/:apellido/:nombre', (req, res) => {
     res.send(`${mensaje}, ${req.params.apellido} ${req.params.nombre}`)
 });
 
-/*punto 2*/
+/*punto 2*/ 
 
 app.get('/dividir/:dividendo/:divisor', (req, res) => {
     if (req.params.divisor == 0) {
@@ -30,7 +30,10 @@ app.get('/suma/:x/:y', (req, res) => {
     let resultado = parseInt(req.params.x) + parseInt(req.params.y)
 
     if (parseInt(req.params.x) >=0 & parseInt(req.params.y) >= 0){
-    res.json({Resultado: `${resultado}`})}
+    res.json({Resultado: `${resultado}`})
+} else {
+    res.json({error:"el numero es menor que cero"})
+}
 })
 
 /*punto 4*/
